@@ -29,7 +29,7 @@ function Header() {
      if(user){
       const {uid, email, displayName}= auth.currentUser;;
       dispatch(addUser({uid: uid, email: email, displayName: displayName})); 
-      navigate('/browse')
+      navigate('/browse') 
     }
     else{
       dispatch(removeUser());
@@ -44,12 +44,12 @@ function Header() {
   return (
     <div className=' w-full z-20 absolute pl-5 pt-1  bg-gradient-to-b from-black flex justify-between'>
 
-      <img src={NetflixLogo}  alt='netflix logo' className={`${!user &&"h-20"}  ${user &&"h-16 "} brightness-200 saturate-200 contrast-200`}/>
+      <img src={NetflixLogo}  alt='netflix logo' className={`${!user &&"h-20"}  ${user &&"h-16 "} brightness-200 saturate-200 contrast-200 cursor-pointer`}/>
       
       {user && (
       <div className=' m-4'>
       <img src={userIcon} alt="usericon" className=' h-9 rounded-md'/>
-      <button className=' mt-1 -ml-3 font-semibold text-sm text-white' onClick={handleSignOut} >Sign Out</button>
+      <button className=' mt-1 -ml-3 font-semibold text-sm text-white ' onClick={handleSignOut} >Sign Out</button>
       </div> )}
     
     </div>

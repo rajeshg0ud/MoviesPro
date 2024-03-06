@@ -11,9 +11,7 @@ const useUpComingMovies = () => {
 
     const jsonData=await data.json();
     dispatch(addUpComingMovies(jsonData.results))
-    
-    console.log(jsonData.results)
-  }
+    }
 
   useEffect(()=>{
     getUpComingMovies();

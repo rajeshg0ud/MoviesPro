@@ -11,9 +11,7 @@ const usePopularMovies = () => {
   
       const jsonData=await data.json();
       dispatch(addPopularMovies(jsonData.results))
-      
-      console.log(jsonData.results)
-    }
+      }
   
     useEffect(()=>{
       getPopularMovies();

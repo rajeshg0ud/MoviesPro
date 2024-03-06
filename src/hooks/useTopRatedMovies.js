@@ -11,8 +11,6 @@ const useTopRatedMovies = () => {
   
       const jsonData=await data.json();
       dispatch(addTopRatedMovies(jsonData.results))
-      
-      console.log(jsonData.results)
     }
   
     useEffect(()=>{
