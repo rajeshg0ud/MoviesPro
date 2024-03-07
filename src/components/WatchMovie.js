@@ -16,7 +16,7 @@ const WatchMovie = () => {
     src={`https://www.youtube.com/embed/${trailerId}?autoplay=1&mute=0&rel=0&modestbranding=1`}
     allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
     allowFullScreen
-    className=' h-screen w-full'
+    className=' h-full w-full'
   ></iframe></div>
   )
 }
