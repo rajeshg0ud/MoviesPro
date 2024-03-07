@@ -5,8 +5,15 @@ import { useSelector } from 'react-redux';
 
 const WatchMovieBackground = () => {
   
-  const trailerInfo=useSelector(store=> store.movie?.trailerInfo)
+  const trailerInfo=useSelector(store=> store.movie?.trailerInfo);
+  
   const {original_title, overview, id}= trailerInfo;
+  
+  window.scrollTo({
+    top: 0,
+    behavior: 'smooth' // optional, adds smooth scrolling
+  });
+  
 
   return (
     <div className='text-xl'>

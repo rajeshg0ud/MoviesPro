@@ -1,5 +1,5 @@
-import React, { useEffect } from 'react'
-import NetflixLogo from '../Images/Netflix_Logo.png'
+import React, { useEffect, useState } from 'react'
+import MPLogo from '../Images/MPLogo.png'
 import userIcon from '../Images/user_icon.jpg'
 import { useNavigate } from 'react-router-dom'
 import { auth } from '../utils/firebase';
@@ -8,18 +8,26 @@ import { useSelector } from 'react-redux';
 import { useDispatch } from 'react-redux';
 import { onAuthStateChanged } from 'firebase/auth'
 import { addUser, removeUser } from '../utils/userSlice'
+import { addToggleSearch, falseToggleSearch } from '../utils/movieSlice';
 
 function Header() {
 
   const navigate=useNavigate();
+
   const user= useSelector((store)=> store?.user)
+  
+  const search= useSelector((store)=> store?.movie?.toggleSearch)
+  
   const handleSignOut=()=>{
     signOut(auth).then(() => {
       // Sign-out successful. navigation done by onAuthChange in below useEffect
     }).catch((error) => {
       // An error happened.
     });
+  }
 
+  const handleSearch=()=>{
+    dispatch(addToggleSearch())
   }
   
   const dispatch= useDispatch();
@@ -42,15 +50,20 @@ function Header() {
 
 
   return (
-    <div className=' w-full z-20 absolute pl-5 pt-1  bg-gradient-to-b from-black flex justify-between'>
+    <div className=' w-full z-20 absolute pl-5 pt-1  bg-gradient-to-b from-black flex justify-between bg-black md:bg-transparent'>
 
-      <img src={NetflixLogo}  alt='netflix logo' className={`${!user &&"h-20"}  ${user &&"h-16 "} brightness-200 saturate-200 contrast-200 cursor-pointer`}/>
+      <img src={MPLogo}  alt='netflix logo' className={`${!user &&"h-10 md:h-12 sm:h-14"}  ${user &&"h-10"}  saturate-200 brightness-200 cursor-pointer mt-4 opacity-100 `} onClick={()=>{navigate("/browse"); dispatch(falseToggleSearch())}}/>
       
+      <div className=' flex'>
       {user && (
       <div className=' m-4'>
-      <img src={userIcon} alt="usericon" className=' h-9 rounded-md'/>
-      <button className=' mt-1 -ml-3 font-semibold text-sm text-white ' onClick={handleSignOut} >Sign Out</button>
+      <button className=' mt-1 -ml-3 font-semibold text-xs md:text-sm text-white bg-red-600 p-2 rounded-md px-3' onClick={handleSearch} >{search? "Home" : "Search"}</button>
       </div> )}
+      {user && (
+      <div className=' flex items-center m-3'>
+      <button className=' mt-1 -ml-3 font-semibold text-xs md:text-sm text-white bg-red-600 p-2 rounded-md px-3' onClick={handleSignOut} >Sign Out</button>
+      </div> )}
+      </div>
     
     </div>
   )

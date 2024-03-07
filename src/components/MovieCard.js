@@ -30,7 +30,7 @@ function MovieCard({ value, posterPath }) {
   if (!posterPath) return null;
 
   return (
-    <div className="w-36 md:w-44 pr-4" onClick={handleMovieClick}>
+    <div className="w-32 md:w-44 pr-4" onClick={handleMovieClick}>
       <img  alt="Movie Card" src={IMG_CDN + posterPath} className='rounded-md px-1 cursor-pointer' />
     </div>
   );

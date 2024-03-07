@@ -1,7 +1,7 @@
 import React from 'react'
 import VideoBackground from './VideoBackground'
-import VideoTitle from './VideoTitle'
 import { useSelector } from 'react-redux'
+import VideoTitleForBackground from './VideoTitleForBackground';
 
 function MainContainer() {
 
@@ -14,7 +14,7 @@ function MainContainer() {
 
   return (
     <div >
-        <VideoTitle  title={title} overview={overview}/>
+        <VideoTitleForBackground  title={title} overview={overview} movie_id={id}/>
         <VideoBackground movie_id={id}/>
     </div>
   )

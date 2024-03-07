@@ -1,5 +1,5 @@
 import React, { useRef, useState } from 'react'
-import LoginBackground from '../Images/Netflix-bg.jpg'
+import LoginBackground from '../Images/MoviesPro-bg.png'
 import Header from './Header'
 import CheckValidateData from '../utils/validate';
 import {createUserWithEmailAndPassword, signInWithEmailAndPassword, updateProfile} from 'firebase/auth';
@@ -69,26 +69,26 @@ function Login() {
   return (
     <div className=' m-0'>
         <Header />
-        <div className=' absolute'>
-            <img src={LoginBackground} alt='Login-background' className='m-0' />
+        <div className=' absolute h-full w-full object-cover'>
+            <img src={LoginBackground} alt='Login-background' className='m-0 object-cover h-full w-full' />
         </div>
-        <div className=' bg-black absolute z-50 h-[110vh] w-full bg-opacity-30'> 
-             <form className='absolute text-white bg-black bg-opacity-80 my-28 w-[29%] h-4/6 flex flex-col mx-auto right-0 left-0 justify-start rounded-md min-w-[400px] min-h-[600px]' onSubmit={(e)=> 
+        <div className=' bg-black absolute z-20 h-[110vh] w-full bg-opacity-35'> 
+             <form className='absolute text-white bg-black bg-opacity-80 my-28 w-[29%] h-4/6 flex flex-col mx-auto right-0 left-0 justify-start rounded-md min-w-72 min-h-96 sm:min-w-80 sm:min-h-[430px] md:min-w-[400px] md:min-h-[550px]' onSubmit={(e)=> 
         e.preventDefault()}>
-                <h1 className=' font-semibold text-3xl  m-16 my-2 mt-16 mb-5'>{ isSignInNow ? "Sign In": "Sign Up"}</h1>
+                <h1 className=' font-semibold text-xl sm:text-2xl md:text-3xl  m-16 my-2 mt-8 md:mt-16 mb-5'>{ isSignInNow ? "Sign In": "Sign Up"}</h1>
                 {
-                    !isSignInNow&& <input type='text' placeholder='Full Name' className=' bg-zinc-700 py-3 rounded-md px-5  m-16 my-2 ' ref={name}/>
+                    !isSignInNow&& <input type='text' placeholder='Full Name' className=' bg-zinc-700 py-2 md:py-3 rounded-md px-5  m-16 my-2 ' ref={name}/>
                 }
-                <input type='text' placeholder='Email or phone number' className=' bg-zinc-700 py-3 rounded-md px-5  m-16 my-2 focus:outline-none' ref={email}/>
-                <input type='password' placeholder='Password'  className=' bg-zinc-700 py-3 rounded-md px-5  m-16 my-2 ' ref={password}/>
+                <input type='text' placeholder='Email or phone number' className=' bg-zinc-700 py-2 md:py-3 rounded-md px-5  m-16 my-2 focus:outline-none' ref={email}/>
+                <input type='password' placeholder='Password'  className=' bg-zinc-700 py-2 md:py-3 rounded-md px-5  m-16 my-2 ' ref={password}/>
                 
                 <p className=' text-red-500 m-16 my-0 font-semibold'>{error}</p>
-                <button className=' bg-red-600 text-white py-3 rounded-md px-5 m-16 my-2 mt-12' onClick={handleClick}>{isSignInNow ? "Sign In" : "Sign Up"}</button>
+                <button className=' bg-red-600 text-white py-2 md:py-3 rounded-md px-5 m-16 my-2 mt-12' onClick={handleClick}>{isSignInNow ? "Sign In" : "Sign Up"}</button>
                 {
                     isSignInNow? 
-                    <p className='m-16 my-2 mt-12'><a className=' text-zinc-500'>New to Netflix?</a> <a onClick={()=> setisSignInNow(false)} className='cursor-pointer'>Sign Up now</a></p>:
+                    <p className='m-16 my-2 mt-12 text-sm'><a className=' text-zinc-500'>New to MoviesPro?</a> <a onClick={()=> setisSignInNow(false)} className='cursor-pointer'>Sign Up now</a></p>:
 
-                    <p className='m-16 my-2 mt-12'><a className=' text-zinc-500 '>Already have a Netflix account?</a> <a onClick={()=> setisSignInNow(true)} className='cursor-pointer' >Sign In now</a></p>
+                    <p className='m-16 my-2 mt-12 text-sm'><a className=' text-zinc-500 '>Already have a MoviesPro account?</a> <a onClick={()=> setisSignInNow(true)} className='cursor-pointer' >Sign In now</a></p>
                 }
             </form>
         </div>
