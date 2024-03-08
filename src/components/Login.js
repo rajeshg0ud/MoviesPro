@@ -72,7 +72,7 @@ function Login() {
         <div className=' absolute h-full w-full object-cover'>
             <img src={LoginBackground} alt='Login-background' className='m-0 object-cover h-full w-full' />
         </div>
-        <div className=' bg-black absolute z-20 h-[110vh] w-full bg-opacity-35'> 
+        <div className=' bg-black absolute z-20 h-[100%] w-full bg-opacity-35'> 
              <form className='absolute text-white bg-black bg-opacity-80 my-28 w-[29%] h-4/6 flex flex-col mx-auto right-0 left-0 justify-start rounded-md min-w-72 max-h-[427px] sm:min-w-80 sm:min-h-[430px] md:min-w-[400px] md:min-h-[550px]' onSubmit={(e)=> 
         e.preventDefault()}>
                 <h1 className=' font-semibold text-xl sm:text-2xl md:text-3xl mx-14 sm:mx-16 my-2 mt-8 md:mt-16 mb-5'>{ isSignInNow ? "Sign In": "Sign Up"}</h1>
