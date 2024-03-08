@@ -2,13 +2,19 @@ import React from 'react'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faPlay, faInfoCircle } from '@fortawesome/free-solid-svg-icons';
 import { useNavigate } from 'react-router-dom';
+import useMovieTrailer from '../hooks/useMovieTrailer';
+import { useSelector } from 'react-redux';
 
-function VideoTitle({title, overview}) {
+function VideoTitle({title, overview, movie_id}) {
 
   const navigate= useNavigate();
 
+  useMovieTrailer(movie_id);
+
+ const trailerId= useSelector(store => store.movie?.trailerId)
+
   const handlePlayButton=()=>{
-    navigate("/watch/movie")
+    navigate(`/watch/movie?t=${trailerId}`)
   }
 
   return (

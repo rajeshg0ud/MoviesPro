@@ -35,7 +35,7 @@ const Watch = () => {
      if(user){
       const {uid, email, displayName}= auth.currentUser;;
       dispatch(addUser({uid: uid, email: email, displayName: displayName})); 
-      navigate('/watch')
+     // navigate('/watch')
     }
     else{
       dispatch(removeUser());

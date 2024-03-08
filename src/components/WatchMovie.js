@@ -1,10 +1,12 @@
 import React from 'react'
 import { useSelector } from 'react-redux'
+import { useSearchParams } from 'react-router-dom';
 
 const WatchMovie = () => {
-    const trailerId= useSelector(store=> store.movie?.trailerId)
+  const [searchParams]= useSearchParams();
+  const trailerId= searchParams.get("t");
+  console.log(trailerId);
 
-    
   window.scrollTo({
     top: 0,
     behavior: 'smooth' // optional, adds smooth scrolling

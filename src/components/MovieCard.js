@@ -6,24 +6,11 @@ import { useNavigate } from 'react-router-dom';
 
 function MovieCard({ value, posterPath }) {
   const movieId = value.id;
-
   
   const navigate=useNavigate();
 
-  const dispatch=useDispatch();
-
-   const fetchMovieData = async () => {
-      
-      const data2= await fetch(`https://api.themoviedb.org/3/movie/${movieId}`, API_Options);
-      const jsonData2= await data2.json();
-      console.log(jsonData2)
-      dispatch(addTrailerInfo(jsonData2))
-      
-    navigate("/watch" )
-    };
-
   const handleMovieClick = () => {
-    fetchMovieData();
+    navigate(`/watch?m=${movieId}` )
   };
 
 

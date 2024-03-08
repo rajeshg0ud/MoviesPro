@@ -2,11 +2,16 @@ import React from 'react'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faPlay, faInfoCircle } from '@fortawesome/free-solid-svg-icons';
 import { useNavigate } from 'react-router-dom';
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import { addTrailerInfo } from '../utils/movieSlice';
 import { API_Options } from '../utils/constants';
+import useMovieTrailer from '../hooks/useMovieTrailer';
 
 function VideoTitleForBackground({title, overview, movie_id}) {
+
+  useMovieTrailer(movie_id);
+
+  const trailerId=useSelector(store=> store?.movie?.trailerId)
 
   const navigate= useNavigate();
   const dispatch=useDispatch();
@@ -15,7 +20,7 @@ function VideoTitleForBackground({title, overview, movie_id}) {
     const data2= await fetch(`https://api.themoviedb.org/3/movie/${movie_id}`, API_Options);
     const jsonData2= await data2.json();
     console.log(jsonData2);
-    navigate("/watch/movie")
+    navigate(`/watch/movie?t=${trailerId}`)
     dispatch(addTrailerInfo(jsonData2));
   }
 
