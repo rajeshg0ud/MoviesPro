@@ -9,7 +9,7 @@ function MainContainer() {
 
     if(!movies) return; 
     
-    const {title, overview, id}= movies[1];
+    const {title, overview, id}= movies[2];
 
 
   return (
