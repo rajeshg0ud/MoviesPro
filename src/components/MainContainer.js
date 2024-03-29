@@ -7,7 +7,8 @@ function MainContainer() {
 
     const movies= useSelector(store => store?.movie?.nowPlayingMovies);
 
-    if(!movies) return; 
+    if(!movies) return <h1 className=' flex justify-center pt-28 font-bold text-3xl drop-shadow-lg z-50'>{ "Facing server issues. Please try again later :("}</h1>
+
     
     const {title, overview, id}= movies[2];
 

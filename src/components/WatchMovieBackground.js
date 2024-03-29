@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import VideoTitle from './VideoTitle';
 import VideoBackground from './VideoBackground';
-import { useDispatch, useSelector } from 'react-redux';
+import { useDispatch } from 'react-redux';
 import { addTrailerInfo } from '../utils/movieSlice';
 import { API_Options } from '../utils/constants';
 import { useSearchParams } from 'react-router-dom';

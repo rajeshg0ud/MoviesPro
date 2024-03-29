@@ -25,7 +25,7 @@ function VideoTitle({title, overview, movie_id}) {
         <button className='bg-white text-black rounded-md py-[2px] px-[5px] md:py-[5px] md:px-[18px] mr-4 hover:bg-opacity-90 shadow-lg text-sm md:text-lg' style={{ boxShadow: '4px 4px 8px rgba(0, 0, 0, 0.2) ' }} onClick={handlePlayButton}>
             <FontAwesomeIcon icon={faPlay} size='lg'  className=' pr-2'/>
             Play</button><button className='bg-white rounded-md py-[2px] px-[5px] md:py-[5px] md:px-[18px] mr-4 bg-opacity-15 shadow-lg text-sm md:text-lg' style={{ boxShadow: '4px 4px 8px rgba(0, 0, 0, 0.2)' }}>
-        <FontAwesomeIcon icon={faInfoCircle} size='lg'  style={{ color: 'white', position: 'relative', zIndex: '1' }}   className=' pr-2'/>
+            <FontAwesomeIcon icon={faInfoCircle} size='lg'  style={{ color: 'white', position: 'relative', zIndex: '1' }}   className=' pr-2'/>
        More Info</button>
         </div>
     </div>

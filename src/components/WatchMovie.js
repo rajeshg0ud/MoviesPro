@@ -5,6 +5,7 @@ import { useSearchParams } from 'react-router-dom';
 const WatchMovie = () => {
   const [searchParams]= useSearchParams();
   const trailerId= searchParams.get("t");
+
   console.log(trailerId);
 
   window.scrollTo({

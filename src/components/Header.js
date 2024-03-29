@@ -1,6 +1,5 @@
-import React, { useEffect, useState } from 'react'
-import MPLogo from '../Images/MPLogo.png'
-import userIcon from '../Images/user_icon.jpg'
+import React, { useEffect } from 'react'
+import MPLogo from '../Images/MPLogo.png' 
 import { useNavigate } from 'react-router-dom'
 import { auth } from '../utils/firebase';
 import { signOut } from 'firebase/auth';

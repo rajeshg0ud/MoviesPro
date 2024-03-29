@@ -9,6 +9,7 @@ function VideoBackground({movie_id}) {
 
     const trailerId= useSelector(store => store.movie?.trailerId)
 
+   
   return (
     <div className=' pt-16 md:pt-0'><iframe
     src={`https://www.youtube.com/embed/${trailerId}?autoplay=1&mute=1&rel=0&modestbranding=1&showinfo=0&controls=0`}

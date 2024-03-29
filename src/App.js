@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react'
+import React from 'react'
 import Login from './components/Login'
 import { RouterProvider, createBrowserRouter } from 'react-router-dom'
 import Body from './components/Body'
@@ -30,10 +30,10 @@ const App = () => {
         path: '/watch',
         element: <WatchMovieBackground />
       },
-    {
-      path: '/watch/movie',
-      element: <WatchMovie />
-    }]
+      {
+       path: '/watch/movie',
+       element: <WatchMovie />
+      }]
     }
     ]
     }
